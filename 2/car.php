@@ -15,27 +15,12 @@ if(!empty($_POST)){
 }
 ?>
 
-<?php
-if(isset($marque)){
-?>
-
 <ul>
     <li>Marque: <?php echo $marque; ?></li>
     <li>Modèle: <?php echo $modele; ?></li>
-    <li>Couleur: <?php echo $couleur; ?></li>
+    <li>Couleur: <input type="color" value="<?php echo $couleur; ?>" id="colorWell"></li>
     <li>Kilométrag: <?php echo $kilometrage; ?></li>
     <li>Carburant: <?php echo $carburant; ?></li>
     <li>Annee: <?php echo $annee; ?></li>
     <li>Prix: <?php echo $prix; ?></li>
 </ul>
-<?php } else{?>
-    <ul>
-        <li>Marque:</li>
-        <li>Modèle:</li>
-        <li>Couleur:</li>
-        <li>Kilométrage:</li>
-        <li>Carburant:</li>
-        <li>Annee:</li>
-        <li>Prix:</li>
-    </ul>
-<?php }?>

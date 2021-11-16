@@ -1,20 +1,3 @@
-<?php
-if(!empty($_POST)){
-    if(in_array('', $_POST)){
-        echo ("Tous les champs sont requis");
-        exit();
-    }  
-}else{
-    $marque = htmlspecialchars(trim($_POST['marque']));
-    $modele = htmlspecialchars(trim($_POST['modele']));
-    $couleur = htmlspecialchars(trim($_POST['couleur']));
-    $kilometrage = htmlspecialchars(trim($_POST['kilometrage']));
-    $carburant = htmlspecialchars(trim($_POST['carburant']));
-    $annee = htmlspecialchars(trim($_POST['annee']));
-    $prix = htmlspecialchars(trim($_POST['prix']));
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +21,7 @@ if(!empty($_POST)){
         </div>
         <div class="mb-3">
             <label for="couleur" class="form-label">Couleur</label>
-            <input type="text" class="form-control" name="couleur" id="couleur">
+            <input type="color" name="couleur" id="couleur">
         </div>
         <div class="mb-3">
             <label for="kilometrage" class="form-label">kilometrage</label>
