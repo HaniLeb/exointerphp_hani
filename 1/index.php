@@ -1,15 +1,16 @@
 <?php
-if(in_array('', $_POST)){
-    echo ("Tous les champs sont requis");
-    exit();
-}else{
-    $lastname = htmlspecialchars(trim($_POST['lastname']));
-    $firstname = htmlspecialchars(trim($_POST['firstname']));
-    $gender = htmlspecialchars(trim($_POST['gender']));
-    $adress = htmlspecialchars(trim($_POST['adress']));
-    $town = htmlspecialchars(trim($_POST['town']));
-    $zipcode = htmlspecialchars(trim($_POST['zipcode']));
-}
+if(!empty($_POST)){
+    if(in_array('', $_POST)){
+        echo 'Tous les champs sont requis';
+    }else{
+        $lastname = htmlspecialchars(trim($_POST['lastname']));
+        $firstname = htmlspecialchars(trim($_POST['firstname']));
+        $gender = htmlspecialchars(trim($_POST['gender']));
+        $adress = htmlspecialchars(trim($_POST['adress']));
+        $town = htmlspecialchars(trim($_POST['town']));
+        $zipcode = htmlspecialchars(trim($_POST['zipcode']));
+    }
+} 
 ?>
 
 <!DOCTYPE html>
@@ -23,34 +24,62 @@ if(in_array('', $_POST)){
     <title>Document</title>
 </head>
 <body>
-    <form class="w-75 mx-auto shadow border rounded p-5 mt-5" methode="POST">
+    <?php
+        if (isset($lastname)) {
+    ?>
+        <ul>
+            <li>Nom : <?php echo $lastname; ?></li>
+            <li>Prénom : <?php echo $firstname; ?></li>
+            <li>Genre : <?php echo $gender; ?></li>
+            <li>Adresse : <?php echo $adress; ?></li>
+            <li>Ville : <?php echo $town; ?></li>
+            <li>Code Postal : <?php echo $zipcode; ?></li>
+        </ul>
+
+    <?php
+        } else {
+    ?>
+
+    <ul>
+        <li>Nom</li>
+        <li>Prénom</li>
+        <li>Genre</li>
+        <li>Adresse</li>
+        <li>Ville</li>
+        <li>Code Postal</li>
+    </ul>
+
+    <?php }?>
+
+    <form class="w-75 mx-auto shadow border rounded p-5 mt-5" action="" method="post">
         <div class="mb-3">
             <label for="lastname" class="form-label">Lastname</label>
-            <input type="text" class="form-control" name="lastname">
+            <input type="text" class="form-control" name="lastname" id="lastname">
         </div>
         <div class="mb-3">
             <label for="firstname" class="form-label">Firstname</label>
-            <input type="text" class="form-control" name="firstname">
+            <input type="text" class="form-control" name="firstname" id="firstname">
         </div>
         <div class="mb-3">
             <label for="gender" class="form-label">Gender</label>
-            <input type="text" class="form-control" name="gender">
+            <input type="text" class="form-control" name="gender" id="gender">
         </div>
         <div class="mb-3">
             <label for="adress" class="form-label">Adress</label>
-            <input type="text" class="form-control" name="adress">
+            <input type="text" class="form-control" name="adress" id="adress">
         </div>
         <div class="mb-3">
             <label for="town" class="form-label">Town</label>
-            <input type="text" class="form-control" name="town">
+            <input type="text" class="form-control" name="town" id="town">
         </div>
         <div class="mb-3">
             <label for="zipcode" class="form-label">Zip code</label>
-            <input type="number" class="form-control" name="zipcode">
+            <input type="number" class="form-control" name="zipcode" id="zipcode">
         </div>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary w-25">Submit</button>
+            <!-- <input type="submit" class="btn btn-primary w-25" value="Envoyer"> -->
+            <button type="submit" class="btn btn-primary w-25">Envoyer</button>
         </div>
     </form>
 
@@ -59,16 +88,3 @@ if(in_array('', $_POST)){
 </body>
 </html>
 
-<?php
-echo "
-<div>
-<ul>
-<li>$lastname</li>
-<li>$firstname</li>
-<li>$gender</li>
-<li>$adress</li>
-<li>$town</li>
-<li>$zipcode</li>
-</ul>
-</div>"
-?>
