@@ -1,7 +1,15 @@
 <?php
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
+if(in_array('', $_POST)){
+    echo ("Tous les champs sont requis");
+    exit();
+}else{
+    $lastname = htmlspecialchars(trim($_POST['lastname']));
+    $firstname = htmlspecialchars(trim($_POST['firstname']));
+    $gender = htmlspecialchars(trim($_POST['gender']));
+    $adress = htmlspecialchars(trim($_POST['adress']));
+    $town = htmlspecialchars(trim($_POST['town']));
+    $zipcode = htmlspecialchars(trim($_POST['zipcode']));
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +46,7 @@ echo '</pre>';
         </div>
         <div class="mb-3">
             <label for="zipcode" class="form-label">Zip code</label>
-            <input type="text" class="form-control" name="zipcode">
+            <input type="number" class="form-control" name="zipcode">
         </div>
 
         <div class="d-flex justify-content-center">
@@ -50,3 +58,17 @@ echo '</pre>';
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+echo "
+<div>
+<ul>
+<li>$lastname</li>
+<li>$firstname</li>
+<li>$gender</li>
+<li>$adress</li>
+<li>$town</li>
+<li>$zipcode</li>
+</ul>
+</div>"
+?>
