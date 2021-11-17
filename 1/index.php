@@ -24,6 +24,8 @@ if(!empty($_POST)){
     <title>Document</title>
 </head>
 <body>
+    <?php include_once "../4/_navbar.php"?>
+
     <?php
         if (isset($lastname)) {
     ?>
@@ -88,3 +90,4 @@ if(!empty($_POST)){
 </body>
 </html>
 
+<?php include_once "../4/_footer.php"?>

@@ -1,4 +1,6 @@
 <?php
+include_once "../4/_navbar.php";
+
 echo '<pre>';
 print_r($_POST);
 echo '</pre>';
@@ -24,4 +26,5 @@ if ($password === $password2) {
     exit();
 }
 
+include_once "../4/_footer.php";
 ?>

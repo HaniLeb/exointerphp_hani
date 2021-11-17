@@ -1,4 +1,6 @@
 <?php
+include_once "../4/_navbar.php";
+
 if(!empty($_POST)){
     if(in_array('', $_POST)){
         echo ("Tous les champs sont requis");
@@ -24,3 +26,5 @@ if(!empty($_POST)){
     <li>Annee: <?php echo $annee; ?></li>
     <li>Prix: <?php echo $prix; ?></li>
 </ul>
+
+<?php include_once "../4/_footer.php";?>
