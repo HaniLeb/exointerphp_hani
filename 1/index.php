@@ -1,7 +1,8 @@
 <?php
 if(!empty($_POST)){
     if(in_array('', $_POST)){
-        echo 'Tous les champs sont requis';
+        header('Location:index.php?error=champsvide');
+        exit();
     }else{
         $lastname = htmlspecialchars(trim($_POST['lastname']));
         $firstname = htmlspecialchars(trim($_POST['firstname']));
@@ -10,7 +11,19 @@ if(!empty($_POST)){
         $town = htmlspecialchars(trim($_POST['town']));
         $zipcode = htmlspecialchars(trim($_POST['zipcode']));
     }
-} 
+}
+
+$alert = false;
+
+if (isset($_GET["error"])) {
+    $alert = true;
+
+    if ($_GET["error"] == "champsvide") {
+        $type = "danger";
+        $message = "Tous les champs doivent être rempli";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +37,9 @@ if(!empty($_POST)){
     <title>Document</title>
 </head>
 <body>
-    <?php include_once "../4/_navbar.php"?>
+    <?php include_once "../4/_navbar.php";?>
+
+    <?php echo $alert ? "<div class='alert alert-{$type} mt-5 text-center w-75 mx-auto'>{$message}</div>" : '';?>
 
     <?php
         if (isset($lastname)) {

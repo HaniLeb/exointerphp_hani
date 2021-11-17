@@ -9,15 +9,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../1/index.php">Exo 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../2/index.php">Exo 2</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../3/sign-up.php">Exo 3</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../1/index.php">Exo 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../2/index.php">Exo 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../3/sign-up.php">Exo 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../4/">Exo 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../5/index.php">Exo 5</a>
+            </li>
         </ul>
     </div>
     </div>

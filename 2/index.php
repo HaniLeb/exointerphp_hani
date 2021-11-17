@@ -1,3 +1,15 @@
+<?php
+$alert = false;
+
+if (isset($_GET["error"])) {
+    $alert = true;
+
+    if ($_GET['error'] == "champsvide") {
+        $type = 'danger';
+        $message = "Tous les champs sont requis";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +23,9 @@
 <body>
     <?php include_once "../4/_navbar.php"?>
 
-    <form class="w-75 mx-auto shadow border rounded p-5 mt-5" action="car.php" method="POST">
+    <?php echo $alert ? "<div class='alert alert-{$type} mt-5 text-center w-75 mx-auto'>{$message}</div>" : '';?>
+
+    <form class="w-75 mx-auto shadow border rounded p-5 mt-5" action="index_post.php" method="POST">
         <div class="mb-3">
             <label for="marque" class="form-label">Marque</label>
             <input type="text" class="form-control" name="marque" id="marque">
