@@ -21,6 +21,12 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../5/index.php">Exo 5</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../6/index.php">Exo 6</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../7/index.php">Exo 7</a>
+            </li>
         </ul>
     </div>
     </div>

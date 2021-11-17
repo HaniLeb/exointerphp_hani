@@ -19,7 +19,7 @@ if (isset($_GET["success"])) {
 
     if($_GET["success"] == "auth"){
         $type = "success";
-        $message = "Votre inscription est valide";
+        $message = "Vos données sont valide";
     }
 }
 ?>
