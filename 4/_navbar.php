@@ -19,9 +19,6 @@
                 <a class="nav-link active" aria-current="page" href="../3/sign-up.php">Exo 3</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../4/">Exo 4</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../5/index.php">Exo 5</a>
             </li>
         </ul>

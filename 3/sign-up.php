@@ -1,29 +1,5 @@
 <?php
 require "config.php";
-
-$alert = false;
-
-if(isset($_GET["error"])){
-    $alert = true;
-
-    if($_GET["error"] == "champsVide"){
-        $type = "danger";
-        $message = "Tous les champs sont requis";
-    }
-    if($_GET["error"] == "mdpdifferent"){
-        $type = "warning";
-        $message =  "Les mdp sont différent";
-    }
-}
-
-if (isset($_GET["success"])) {
-    $alert = true;
-
-    if($_GET["success"] == "auth"){
-        $type = "success";
-        $message = "Votre inscription est valide";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +14,7 @@ if (isset($_GET["success"])) {
 </head>
 <body>
 <?php include_once "../4/_navbar.php"?>
+<?php include_once "../5/_alert.php"?>
 
 <?php
 if (!empty($_SESSION)) {

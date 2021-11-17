@@ -6,7 +6,7 @@ print_r($_POST);
 echo '</pre>';
 
 if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])){
-    header('Location:sign-up.php?error=champsVide');
+    header('Location:sign-up.php?error=champsvide');
     exit();
 }else{
     $username = htmlspecialchars(trim($_POST['username']));

@@ -1,15 +1,3 @@
-<?php
-$alert = false;
-
-if (isset($_GET["error"])) {
-    $alert = true;
-
-    if ($_GET['error'] == "champsvide") {
-        $type = 'danger';
-        $message = "Tous les champs sont requis";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +10,7 @@ if (isset($_GET["error"])) {
 </head>
 <body>
     <?php include_once "../4/_navbar.php"?>
+    <?php include_once "../5/_alert.php"?>
 
     <?php echo $alert ? "<div class='alert alert-{$type} mt-5 text-center w-75 mx-auto'>{$message}</div>" : '';?>
 
