@@ -12,6 +12,10 @@ if (isset($_GET["error"])) {
         $type = "warning";
         $message =  "Les mdp sont différent";
     }
+    if($_GET["error"] == "reqNotValid"){
+        $type = "warning";
+        $message =  "id not valid";
+    }
 }
 
 if (isset($_GET["success"])) {
@@ -20,6 +24,10 @@ if (isset($_GET["success"])) {
     if($_GET["success"] == "auth"){
         $type = "success";
         $message = "Vos données sont valide";
+    }
+    if($_GET["success"] == "modif"){
+        $type = "success";
+        $message = "Vos données ont été modifier";
     }
 }
 ?>
